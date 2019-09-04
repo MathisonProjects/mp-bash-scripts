@@ -1,0 +1,62 @@
+#!/bin/bash
+
+COMMAND[0]="Normal \e[1mBold"
+COMMAND[${#COMMAND[@]}]="Normal \e[2mDim"
+COMMAND[${#COMMAND[@]}]="Normal \e[4mUnderlined"
+COMMAND[${#COMMAND[@]}]="Normal \e[5mBlink"
+COMMAND[${#COMMAND[@]}]="Normal \e[7minverted"
+COMMAND[${#COMMAND[@]}]="Normal \e[8mHidden"	
+COMMAND[${#COMMAND[@]}]="\e[0mNormal Text"
+COMMAND[${#COMMAND[@]}]="Normal \e[1mBold \e[21mNormal"
+COMMAND[${#COMMAND[@]}]="Normal \e[2mDim \e[22mNormal"
+COMMAND[${#COMMAND[@]}]="Normal \e[4mUnderlined \e[24mNormal"
+COMMAND[${#COMMAND[@]}]="Normal \e[5mBlink \e[25mNormal"
+COMMAND[${#COMMAND[@]}]="Normal \e[7minverted \e[27mNormal"
+COMMAND[${#COMMAND[@]}]="Normal \e[8mHidden \e[28mNormal"
+COMMAND[${#COMMAND[@]}]="Default \e[39mDefault"
+COMMAND[${#COMMAND[@]}]="Default \e[30mBlack"
+COMMAND[${#COMMAND[@]}]="Default \e[31mRed"
+COMMAND[${#COMMAND[@]}]="Default \e[32mGreen"
+COMMAND[${#COMMAND[@]}]="Default \e[33mYellow"
+COMMAND[${#COMMAND[@]}]="Default \e[34mBlue"
+COMMAND[${#COMMAND[@]}]="Default \e[35mMagenta"
+COMMAND[${#COMMAND[@]}]="Default \e[36mCyan"
+COMMAND[${#COMMAND[@]}]="Default \e[37mLight gray"
+COMMAND[${#COMMAND[@]}]="Default \e[90mDark gray"
+COMMAND[${#COMMAND[@]}]="Default \e[91mLight red"
+COMMAND[${#COMMAND[@]}]="Default \e[92mLight green"
+COMMAND[${#COMMAND[@]}]="Default \e[93mLight yellow"
+COMMAND[${#COMMAND[@]}]="Default \e[94mLight blue"
+COMMAND[${#COMMAND[@]}]="Default \e[95mLight magenta"
+COMMAND[${#COMMAND[@]}]="Default \e[96mLight cyan"
+COMMAND[${#COMMAND[@]}]="Default \e[97mWhite"	
+COMMAND[${#COMMAND[@]}]="Default \e[49mDefault"
+COMMAND[${#COMMAND[@]}]="Default \e[40mBlack"
+COMMAND[${#COMMAND[@]}]="Default \e[41mRed"
+COMMAND[${#COMMAND[@]}]="Default \e[42mGreen"
+COMMAND[${#COMMAND[@]}]="Default \e[43mYellow"
+COMMAND[${#COMMAND[@]}]="Default \e[44mBlue"
+COMMAND[${#COMMAND[@]}]="Default \e[45mMagenta"
+COMMAND[${#COMMAND[@]}]="Default \e[46mCyan"
+COMMAND[${#COMMAND[@]}]="Default \e[47mLight gray"
+COMMAND[${#COMMAND[@]}]="Default \e[100mDark gray"
+COMMAND[${#COMMAND[@]}]="Default \e[101mLight red"
+COMMAND[${#COMMAND[@]}]="Default \e[102mLight green"
+COMMAND[${#COMMAND[@]}]="Default \e[103mLight yellow"
+COMMAND[${#COMMAND[@]}]="Default \e[104mLight blue"
+COMMAND[${#COMMAND[@]}]="Default \e[105mLight magenta"
+COMMAND[${#COMMAND[@]}]="Default \e[106mLight cyan"
+COMMAND[${#COMMAND[@]}]="Default \e[107mWhite"
+
+tLen=${#COMMAND[@]}
+
+
+/var/www/html/automation/StylingCommands/Sectioning.sh "Formatting List" "head"
+
+for ((i=0; i<tLen; i++)); do
+	echo -e '\e[0m|------------------------------|'
+	echo "${COMMAND[${i}]}"
+	echo -e "${COMMAND[${i}]}\e[0m"
+done
+
+/var/www/html/automation/StylingCommands/Sectioning.sh "Formatting List" "foot"
